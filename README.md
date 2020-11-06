@@ -1,33 +1,56 @@
-# A statically generated blog example using Next.js, Markdown, and TypeScript
+# Índice
+- [Sobre](#-sobre)
+- [Tecnologias](#-tecnologias)
+- [Executando o projeto](#-executando-o-projeto)
 
-This is the existing [blog-starter](https://github.com/vercel/next.js/tree/canary/examples/blog-starter) plus TypeScript.
+## 📋 Sobre
 
-This example showcases Next.js's [Static Generation](https://nextjs.org/docs/basic-features/pages) feature using Markdown files as the data source.
+Este projeto, **blog-thomaslossio-nextjs-template**, foi baseado no [template de blog do NextJS](https://github.com/vercel/next.js/tree/canary/examples/blog-starter-typescript) e incrementado com a [API Routes](https://nextjs.org/docs/api-routes/introduction) junto com o acesso ao MongoDB para contagem de visitas dos posts conforme o [tutorial da RocketSeat](https://blog.rocketseat.com.br/criando-um-blog-com-contador-de-visitas-usando-nextjs-e-mongodb/). 
 
-The blog posts are stored in `/_posts` as Markdown files with front matter support. Adding a new Markdown file in there will create a new blog post.
+Projeto foi realizado como início dos meus estudos com o NextJS. 😁
 
-To create the blog posts we use [`remark`](https://github.com/remarkjs/remark) and [`remark-html`](https://github.com/remarkjs/remark-html) to convert the Markdown files into an HTML string, and then send it down as a prop to the page. The metadata of every post is handled by [`gray-matter`](https://github.com/jonschlinkert/gray-matter) and also sent in props to the page.
+---
 
-## How to use
+## 🚀 Tecnologias
 
-## Deploy your own
+O projeto utiliza-se das seguintes tecnologias:
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+- [NextJS](https://nextjs.org/);
+- [Yarn](https://yarnpkg.com/);
+- [TypeScript](https://github.com/microsoft/TypeScript);
+- [API Routes](https://nextjs.org/docs/api-routes/introduction);
+- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas);
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/git?c=1&s=https://github.com/vercel/next.js/tree/canary/examples/blog-starter-typescript)
+---
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+## 👨‍💻 Executando o projeto
 
-```bash
-npx create-next-app --example blog-starter-typescript blog-starter-typescript-app
-# or
-yarn create next-app --example blog-starter-typescript blog-starter-typescript-app
+Após realizar o clone do repositório, através do terminal, use o comando a seguir para instalar as dependências do projeto:
+
+```sh
+yarn
 ```
 
-Your blog should be up and running on [http://localhost:3000](http://localhost:3000)! If it doesn't work, post on [GitHub discussions](https://github.com/vercel/next.js/discussions).
+Aguarde um pouco para que o projeto tenha suas dependências instaladas.
 
-Deploy it to the cloud with [Vercel](https://vercel.com/import?filter=next.js&utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+Quando as dependências finalizarem, crie um arquivo na raiz do projeto com o nome `.env.local` e adicione as seguintes variáveis de ambiente:
 
-# Notes
+```
+MONGODB_URI=
+MONGODB_DB=
+```
 
-This blog-starter-typescript uses [Tailwind CSS](https://tailwindcss.com). To control the generated stylesheet's filesize, this example uses Tailwind CSS' v1.4 [`purge` option](https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css) to remove unused CSS.
+Conforme informado na seção de [Tecnologias](#-tecnologias), foi usado o MongoDB Atlas, onde é possível criar um cluster gratuito (com pouco espaço de armazenamento) para realizar os testes com o MongoDB.
+
+Caso você esteja usando alguma instância do MongoDB localmente, basta pegar a url de acesso e definí-la em `MONGODB_URI`, além de você criar o banco de dados e definir em `MONGODB_DB`.
+
+Após a configuração, utilize o seguinte comando:
+
+```sh
+yarn dev
+```
+
+Agora basta acessar no navegador e testar!
+
+---
+Desenvolvido 🙃 por Thomas Lossio.
